@@ -5,8 +5,17 @@ const JOB_PER_PAGE = 12;
 const JobContext = createContext();
 
 function JobProvider(props) {
-  const [fetchData, data, setData, isLoading, setIsLoading, error, setError] =
-    useFetch();
+  const [
+    fetchData,
+    data,
+    setData,
+    isLoading,
+    setIsLoading,
+    error,
+    setError,
+    jobId,
+    setJobId,
+  ] = useFetch();
   const [displayedJobs, setDisplayedJobs] = useState([
     ...data.slice(0, JOB_PER_PAGE),
   ]);
@@ -14,15 +23,15 @@ function JobProvider(props) {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, [jobId]);
 
   useEffect(() => {
     setDisplayedJobs([...data.slice(0, JOB_PER_PAGE * numClick)]);
   }, [data, numClick, setDisplayedJobs]);
 
   const findJob = (id) => {
-    const myJob = data.find((job) => job.id === Number(id));
-    return myJob;
+    setJobId(id);
+    return data.find((job) => job.id === Number(id));
   };
 
   return (

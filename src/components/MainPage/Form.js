@@ -16,8 +16,6 @@ function Form() {
   const [position, setPosition, resetPosition] = useFormState("");
   const [location, setLocation, resetLocation] = useFormState("");
   const [contract, setContract] = useState("Part Time");
-
-  //MOBILE FORM STATE
   const [isOpen, setOpen] = useState(false);
 
   //CONTEXT

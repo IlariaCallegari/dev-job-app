@@ -1,30 +1,36 @@
 import { useState } from "react";
-import getData from "../services/getData";
 
 const useFetch = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  //to prevent rerendering with useEffect
+  const [jobId, setJobId] = useState(0);
 
-  const fetchData = (
+  const fetchData = async (
     params = {
-      position: "Senior Software Engineer",
-      contract: "Full Time",
-      location: "United Kingdom",
+      position: "",
+      contract: "",
+      location: "",
     }
   ) => {
-    getData()
+    await fetch("data.json")
+      .then((res) => {
+        if (!res.ok) throw Error("Network response error");
+        //convert the Json into a js object
+        return res.json();
+      })
       .then((res) => {
         setData(filterResponse(res, params));
         setIsLoading(false);
       })
       .catch((error) => {
         setError(error);
-      }, []);
+      });
   };
 
   const filterResponse = (response, { position, contract, location }) => {
-    response.filter((r) => {
+    return response.filter((r) => {
       return (
         r.position.toLowerCase().includes(position.toLowerCase()) &&
         r.contract.toLowerCase().includes(contract.toLowerCase()) &&
@@ -33,7 +39,17 @@ const useFetch = () => {
     });
   };
 
-  return [fetchData, data, setData, isLoading, setIsLoading, error, setError];
+  return [
+    fetchData,
+    data,
+    setData,
+    isLoading,
+    setIsLoading,
+    error,
+    setError,
+    jobId,
+    setJobId
+  ];
 };
 
 export default useFetch;

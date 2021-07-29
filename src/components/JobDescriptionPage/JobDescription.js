@@ -44,6 +44,7 @@ function JobDescription({ jobSelected }) {
         </a>
       </div>
       <div className={jobDescription}>
+        <h2>Requirements</h2>
         <p>{description}</p>
         <p>{requirements.content}</p>
         <ul>
@@ -51,6 +52,7 @@ function JobDescription({ jobSelected }) {
             <li>{item}</li>
           ))}
         </ul>
+        <h2>The Role</h2>
         <p>{role.content}</p>
         <ul>
           {role.items.map((item) => (
