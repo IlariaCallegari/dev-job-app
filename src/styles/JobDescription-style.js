@@ -94,7 +94,7 @@ const useStyles = createUseStyles({
     }),
   },
   [sizes.down("xs")]: {
-    position: (isDark) => ({
+    positionStyle: (isDark) => ({
       flexDirection: "column",
       alignItems: "flex-start",
       "& h2": {
