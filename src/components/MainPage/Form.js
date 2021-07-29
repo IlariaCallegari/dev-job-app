@@ -15,7 +15,7 @@ function Form() {
   //FORM STATE
   const [position, setPosition, resetPosition] = useFormState("");
   const [location, setLocation, resetLocation] = useFormState("");
-  const [contract, setContract] = useState("Part Time");
+  const [contract, setContract] = useState("");
   const [isOpen, setOpen] = useState(false);
 
   //CONTEXT
@@ -42,16 +42,13 @@ function Form() {
     fetchData({ position, location, contract });
     resetPosition();
     resetLocation();
-    setContract("Part Time");
+    setContract("");
   };
 
   const handleChecked = (e) => {
-    if (e.target.checked === true) {
-      setContract("Full Time");
-    } else {
-      setContract("Part time");
-    }
-  };
+    if (e.target.checked === true) setContract("full time");
+    if (e.target.checked === false) setContract("part time");
+  }
 
   const handleClick = () => {
     setOpen(true);
@@ -114,7 +111,6 @@ function Form() {
         isOpen={isOpen}
         location={location}
         setLocation={setLocation}
-        contract={contract}
         handleSubmit={closePopUp}
         handleChecked={handleChecked}
       />

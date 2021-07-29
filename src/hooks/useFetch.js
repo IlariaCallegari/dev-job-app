@@ -4,7 +4,6 @@ const useFetch = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  //to prevent rerendering with useEffect
   const [jobId, setJobId] = useState(0);
 
   const fetchData = async (
