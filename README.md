@@ -11,6 +11,7 @@ This is a solution to the [Devjobs web app challenge on Frontend Mentor](https:/
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
+  - [Useful Resources](#useful-resources)
 - [Author](#author)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
@@ -58,8 +59,7 @@ One of the main points of learning has been around the useEffect hook. Whilst re
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [useEffect Hook - Infinite Loop article](https://medium.com/@andrewmyint/infinite-loop-inside-useeffect-react-hooks-6748de62871) - This article helped me fixing the bug on my app, and to understand better the re-rendering cycle of useEffect.
 
 ## Author
 
