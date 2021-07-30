@@ -7,7 +7,7 @@ function HowToApplyBox({ jobSelected }) {
   return (
     <div className={box}>
       <h3>How to Apply</h3>
-      <p dangerouslySetInnerHTML={{ __html: jobSelected.apply }} />
+      <a href={jobSelected.apply} dangerouslySetInnerHTML={{ __html: jobSelected.apply }} />
     </div>
   );
 }
