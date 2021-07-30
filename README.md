@@ -53,7 +53,7 @@ This project is the refactored version of the [GitHub-Jobs API](https://github.c
 
 Going through the whole project once more, rethinking its overall structure, and identifying where the code needed changes and how to best implement those changes, was overall a beneficial exercise. 
 
-One of the main points of learning has been around the useEffect hook. Whilst refactoring the code, I realised that the application was fetching data from the JSON file in an infinite loop and, it was re-rending the main page, slowing down considerably the app performance. Reading articles and documentation on how best to tackle the issue, has reinforced and deepened my understanding and the various implication of the useEffect hook.
+One of the main points of learning has been around the useEffect hook. Whilst refactoring the code, I realised that the application was fetching data from the JSON file in an infinite loop and, it was re-rending the main page, slowing down considerably the app performance. Reading articles and documentation on how best to tackle the issue, has reinforced and deepened my understanding and the various implications of the useEffect hook.
 
 ### Useful resources
 
